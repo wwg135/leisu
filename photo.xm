@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PUAlbumListCellContentView : UIView
-
+@property (nonatomic, strong) NSString *title;
 @end
 
 %hook PUAlbumListCellContentView
