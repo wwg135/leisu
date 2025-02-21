@@ -32,11 +32,11 @@
 
 @end
 
-@interface HRAdCollectionView : UIView
+@interface CSJNativeExpressSplashVideoAdView : UIView
 
 @end
 
-%hook HRAdCollectionView
+%hook CSJNativeExpressSplashVideoAdView
 
 - (void)layoutSubviews {
     	%orig;
