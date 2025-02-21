@@ -1,19 +1,21 @@
 #import <UIKit/UIKit.h>
 
-@interface PUAlbumListCellContentView : UIView
+@interface PXGadgetUICollectionViewCell : UIView
 @property (nonatomic, strong) NSString *title;
 @end
 
-%hook PUAlbumListCellContentView
+%hook PXGadgetUICollectionViewCell
 
 - (void)layoutSubviews {
-    %orig;
+    	%orig;
 
-    NSString *title = self.title;
-	if ([title isEqualToString:@"个人收藏"]) {
-        [self removeFromSuperview];
-        return;
-    }
+    	NSString *title = self.title;
+	for (UIView *subview in [self subviews]) {
+		if ([subview title isEqualToString:(@"个人收藏")]) {
+        		[self removeFromSuperview];
+        		return;
+		}
+    	}
 }
 
 %end
