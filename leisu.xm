@@ -32,6 +32,19 @@
 
 @end
 
+@interface HRAdCollectionView : UIView
+
+@end
+
+%hook HRAdCollectionView
+
+- (void)layoutSubviews {
+    	%orig;
+        self.hidden = YES;
+}
+
+%end
+
 %hook MatchSwitchMenuView
 
 - (void)layoutSubviews {
