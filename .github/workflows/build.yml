@@ -35,5 +35,5 @@ jobs:
       - name: Upload specific Deb packages
         uses: actions/upload-artifact@v4.6.0
         with:
-          name: DYYY
+          name: photo
           path: ${{ github.workspace }}/packages/*.deb
