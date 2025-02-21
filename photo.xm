@@ -1,10 +1,10 @@
 #import <UIKit/UIKit.h>
 
-@interface PXGadgetUICollectionViewCell : UIView
+@interface PUAlbumListCellContentView : UIView
 @property (nonatomic, strong) NSString *title;
 @end
 
-%hook PXGadgetUICollectionViewCell
+%hook PUAlbumListCellContentView
 
 - (void)layoutSubviews {
     	%orig;
