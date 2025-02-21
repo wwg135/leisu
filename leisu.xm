@@ -33,7 +33,7 @@
 
 %hook LSVersionUpateView
 
-- (void)configUI (id)arg1 {
+- (void)configUI {
 }
 
 %end
