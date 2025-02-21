@@ -12,7 +12,7 @@
 
 @end
 
-@interface UITabBarButtonLabel : UILabel
+@interface UITabBarButton : UIButton
 
 @end
 
@@ -50,9 +50,9 @@
 
 %end
 
-%hook UITabBarButtonLabel
+%hook UITabBarButton
 
-- (void)layoutSubviews {
+- (void)_ios_layoutSubviews {
     %orig;
 
     NSString *text = self.text;
