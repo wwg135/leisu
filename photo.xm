@@ -11,7 +11,7 @@
 
     	NSString *title = self.title;
 	for (UIView *subview in [self subviews]) {
-		if ([subview title isEqualToString:(@"个人收藏")]) {
+		if ([subview isKindOfClass:[UILabel class]] && [[(UILabel *)subview text] isEqualToString:@"个人收藏"]) {
         		[self removeFromSuperview];
         		return;
 		}
