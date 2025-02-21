@@ -55,11 +55,13 @@
 - (void)_ios_layoutSubviews {
     %orig;
 
-    NSString *text = self.text;
+    NSString *accessibilityLabel = self.accessibilityLabel;
 
-    if ([text isEqualToString:@"发现"]) {
-        [self removeFromSuperview];
-        return;
+	for (UIView *subview in self.subviews) {
+    	if ([accessibilityLabel isEqualToString:@"发现"]) {
+        	[self removeFromSuperview];
+        	return;
+		}
     }
 }
 
