@@ -1,15 +1,15 @@
 TARGET = iphone:clang:latest:15.0
 ARCHS = arm64 arm64e
 export DEBUG = 0
-INSTALL_TARGET_PROCESSES = MobileSlideShow
+INSTALL_TARGET_PROCESSES = leisu
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = photo
+TWEAK_NAME = leisu
 
-photo_FILES = photo.xm
-photoCFLAGS = -fobjc-arc -Wno-error
-photo_LOGOS_DEFAULT_GENERATOR = internal
+leisu_FILES = leisu.xm
+leisuCFLAGS = -fobjc-arc -Wno-error
+leisu_LOGOS_DEFAULT_GENERATOR = internal
 
 export THEOS_STRICT_LOGOS=0
 export ERROR_ON_WARNINGS=0
