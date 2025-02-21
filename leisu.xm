@@ -12,7 +12,11 @@
 
 @end
 
-@interface UITabBarButton : UIButton
+@interface ChatBannerAdView : UIView
+
+@end
+
+@interface MatchSortMenuView : UIView
 
 @end
 
@@ -20,12 +24,28 @@
 
 - (void)layoutSubviews {
     	%orig;
-
         self.hidden = YES;
 }
 
 %end
 
+%hook ChatBannerAdView
+
+- (void)layoutSubviews {
+    	%orig;
+        self.hidden = YES;
+}
+
+%end
+
+%hook MatchSortMenuView
+
+- (void)layoutSubviews {
+    	%orig;
+        self.hidden = YES;
+}
+
+%end
 
 %hook LeisuADView
 
@@ -46,21 +66,6 @@
 
 - (long long)numberOfSectionsInTableView:(id)arg1 {
 	return 0;
-}
-
-%end
-
-%hook UITabBarButton
-
-- (void)_ios_layoutSubviews {
-    %orig;
-
-    NSString *accessibilityLabel = self.accessibilityLabel;
-
-    if ([accessibilityLabel isEqualToString:@"发现"]) {
-        [self removeFromSuperview];
-        return;
-    }
 }
 
 %end
