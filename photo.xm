@@ -9,13 +9,10 @@
 - (void)layoutSubviews {
     	%orig;
 
-//    	NSString *title = self.title;
-	for (UIView *subview in [self subviews]) {
-		if ([subview isKindOfClass:[UILabel class]] && [[(UILabel *)subview text] isEqualToString:@"个人收藏"]) {
-        		[self removeFromSuperview];
-        		return;
-		}
-    	}
+    	NSString *title = self.title;
+	if ([title isEqualToString:@"个人收藏"]) {
+        	self.hidden = YES;
+	}
 }
 
 %end
