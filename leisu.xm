@@ -28,6 +28,10 @@
 
 @end
 
+@interface MatchSlideMenuView : UIView
+
+@end
+
 %hook MatchSwitchMenuView
 
 - (void)layoutSubviews {
@@ -57,6 +61,13 @@
 
 %hook MatchRemarkMenuView
 
+- (void)configUI {
+}
+
+%end
+
+%hook RMEdgeMenuView
+
 - (void)layoutSubviews {
     	%orig;
         self.hidden = YES;
@@ -64,7 +75,7 @@
 
 %end
 
-%hook RMEdgeMenuView
+%hook MatchSlideMenuView
 
 - (void)layoutSubviews {
     	%orig;
