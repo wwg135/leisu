@@ -1,18 +1,15 @@
 #import <UIKit/UIKit.h>
 
-@interface PUAlbumListCellContentView : UIView
-@property (nonatomic, strong) NSString *title;
+@interface MatchSwitchMenuView : UIView
+
 @end
 
-%hook PUAlbumListCellContentView
+%hook MatchSwitchMenuView
 
 - (void)layoutSubviews {
     	%orig;
 
-    	NSString *title = self.title;
-	if ([title isEqualToString:@"个人收藏"]) {
-        	self.hidden = YES;
-	}
+        self.hidden = YES;
 }
 
 %end
