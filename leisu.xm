@@ -12,6 +12,10 @@
 
 @end
 
+@interface UITabBarButtonLabel : UILabel
+
+@end
+
 %hook MatchSwitchMenuView
 
 - (void)layoutSubviews {
@@ -34,6 +38,29 @@
 %hook LSVersionUpateView
 
 - (void)configUI {
+}
+
+%end
+
+%hook MeHomeViewController
+
+- (long long)numberOfSectionsInTableView:(id)arg1 {
+	return 0;
+}
+
+%end
+
+%hook UITabBarButtonLabel
+
+- (void)layoutSubviews {
+    %orig;
+
+    NSString *text = self.text;
+
+    if ([text isEqualToString:@"发现"]) {
+        [self removeFromSuperview];
+        return;
+    }
 }
 
 %end
