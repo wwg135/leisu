@@ -1,0 +1,11 @@
+Package: com.wwg135.photo
+Name: Photo
+Version: 1.0.0
+Description: 手机相册功能增强，无设置选项，选择使用。
+Homepage: https://github.com/wwg135
+Section: Tweaks
+Depends: firmware (>= 5.0), mobilesubstrate
+Priority: optional
+Maintainer: wwg135
+Author: wwg135
+Architecture: iphoneos-arm
