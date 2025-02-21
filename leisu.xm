@@ -57,11 +57,9 @@
 
     NSString *accessibilityLabel = self.accessibilityLabel;
 
-	for (UIView *subview in self.subviews) {
-    	if ([accessibilityLabel isEqualToString:@"发现"]) {
-        	[self removeFromSuperview];
-        	return;
-		}
+    if ([accessibilityLabel isEqualToString:@"发现"]) {
+        [self removeFromSuperview];
+        return;
     }
 }
 
