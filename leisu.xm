@@ -20,6 +20,10 @@
 
 @end
 
+@interface MatchRemarkMenuView : UIView
+
+@end
+
 %hook MatchSwitchMenuView
 
 - (void)layoutSubviews {
@@ -39,6 +43,15 @@
 %end
 
 %hook MatchSortMenuView
+
+- (void)layoutSubviews {
+    	%orig;
+        self.hidden = YES;
+}
+
+%end
+
+%hook MatchRemarkMenuView
 
 - (void)layoutSubviews {
     	%orig;
