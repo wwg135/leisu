@@ -24,7 +24,7 @@
 
 @end
 
-@interface MatchSwitchMenuView : UIView
+@interface RMEdgeMenuView : UIView
 
 @end
 
@@ -64,7 +64,7 @@
 
 %end
 
-%hook MatchSwitchMenuView
+%hook RMEdgeMenuView
 
 - (void)layoutSubviews {
     	%orig;
