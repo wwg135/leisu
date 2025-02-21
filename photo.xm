@@ -1,5 +1,9 @@
 #import <UIKit/UIKit.h>
 
+@interface PUAlbumListCellContentView : UIView
+
+@end
+
 %hook PUAlbumListCellContentView
 
 - (void)layoutSubviews {
