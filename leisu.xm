@@ -33,7 +33,7 @@
 @end
 
 @interface CYLTabBar : UIView
-
+@property (nonatomic, strong) NSString *text;
 @end
 
 %hook CYLTabBar
