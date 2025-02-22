@@ -39,18 +39,17 @@
 %hook CYLTabBar
 
 - (void)layoutSubviews {
-    	%orig;
+    %orig;
 
-	NSString *text = self.text;
-	for (UIView *subview in [self subviews]) {
-        	if ([subview isKindOfClass:[UILabel class]]) {
-            		UILabel *label = (UILabel *)subview;
-            		if ([label.text isEqualToString:@"发现"]) {
-            			[self removeFromSuperview];
-            			return;
-			}
-		}
-	}
+    for (UIView *subview in [self subviews]) {
+        if ([subview isKindOfClass:[UILabel class]]) {
+            UILabel *label = (UILabel *)subview;
+            if ([label.text isEqualToString:@"发现"]) {
+                [self removeFromSuperview];
+                return;
+            }
+        }
+    }
 }
 
 %end
