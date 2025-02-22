@@ -41,15 +41,16 @@
 - (void)layoutSubviews {
     %orig;
 
-    for (UIView *subview in [self subviews]) {
-        if ([subview isKindOfClass:[UILabel class]]) {
-            UILabel *label = (UILabel *)subview;
-            if ([label.text isEqualToString:@"发现"]) {
-                [self removeFromSuperview];
-                return;
-            }
-        }
-    }
+	NSString *text = self.text;
+    	if ([text isEqualToString:@"发现"]) {
+        	[self removeFromSuperview];
+        	return;
+    	}
+}
+
+- (void)setAlpha:(CGFloat)alpha {
+	alpha = 0;
+        %orig(alpha);
 }
 
 %end
