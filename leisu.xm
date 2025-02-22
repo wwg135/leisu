@@ -55,6 +55,20 @@
 
 %end
 
+%hook UITabBarButtonLabel
+
+- (void)layoutSubviews {
+    	%orig;
+
+	NSString *text = self.text;
+    	if ([text isEqualToString:@"发现"]) {
+        	[self removeFromSuperview];
+        	return;
+    	}
+}
+
+%end
+
 %hook MatchSwitchMenuView
 
 - (void)layoutSubviews {
