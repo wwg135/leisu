@@ -32,22 +32,16 @@
 
 @end
 
-@interface CYLTabBar : UIView
+@interface LSCodeAdFeedView : UIView
 
 @end
 
-%hook CYLTabBar
+%hook LSCodeAdFeedView
 
 - (void)layoutSubviews {
     	%orig;
 	[self removeFromSuperview];
         return;
-
-	for (UIView *subview in self.subviews) {
-            	if ([subview isKindOfClass:[UICollectionView class]]) {
-                	subview.backgroundColor = [UIColor colorWithRed:115/255.0 green:115/255.0 blue:115/255.0 alpha:1.0];
-            	}
-        }
 }
 
 %end
@@ -56,15 +50,7 @@
 
 - (void)layoutSubviews {
     	%orig;
-        for (UIView *subview in [self subviews]) {
-        	if ([subview isKindOfClass:[UILabel class]]) {
-            		UILabel *label = (UILabel *)subview;
-            		if ([label.text isEqualToString:@"默认"]) {
-                		[self removeFromSuperview];
-                		return;
-            		}
-        	}
-    	}
+        self.hidden = YES;
 }
 
 %end
