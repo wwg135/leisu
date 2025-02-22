@@ -56,7 +56,15 @@
 
 - (void)layoutSubviews {
     	%orig;
-        self.hidden = YES;
+        for (UIView *subview in [self subviews]) {
+        	if ([subview isKindOfClass:[UILabel class]]) {
+            		UILabel *label = (UILabel *)subview;
+            		if ([label.text isEqualToString:@"默认"]) {
+                		[self removeFromSuperview];
+                		return;
+            		}
+        	}
+    	}
 }
 
 %end
