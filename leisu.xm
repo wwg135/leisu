@@ -32,34 +32,22 @@
 
 @end
 
-//@interface CYLTabBar : UIView
+@interface CYLTabBar : UIView
 
-//@end
-
-@interface UITabBarButtonLabel : UILabel
-@property (nonatomic, copy) NSString *text;
 @end
 
-//%hook CYLTabBar
-
-//- (void)layoutSubviews {
-//    	%orig;
-//	[self removeFromSuperview];
-//        return;
-//}
-
-//%end
-
-%hook UITabBarButtonLabel
+%hook CYLTabBar
 
 - (void)layoutSubviews {
     	%orig;
+	[self removeFromSuperview];
+        return;
 
-	NSString *text = self.text;
-    	if ([text isEqualToString:@"发现"]) {
-        	[self removeFromSuperview];
-        	return;
-    	}
+	for (UIView *subview in self.subviews) {
+            	if ([subview isKindOfClass:[UICollectionView class]]) {
+                	subview.backgroundColor = [UIColor colorWithRed:115/255.0 green:115/255.0 blue:115/255.0 alpha:1.0];
+            	}
+        }
 }
 
 %end
