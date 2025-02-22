@@ -32,28 +32,23 @@
 
 @end
 
-@interface CYLTabBar : UIView
+//@interface CYLTabBar : UIView
 
-@end
+//@end
 
 @interface UITabBarButtonLabel : UILabel
 @property (nonatomic, copy) NSString *text;
 @end
 
-%hook CYLTabBar
+//%hook CYLTabBar
 
-- (void)layoutSubviews {
-    	%orig;
-	[self removeFromSuperview];
-        return;
-}
+//- (void)layoutSubviews {
+//    	%orig;
+//	[self removeFromSuperview];
+//        return;
+//}
 
-- (void)setAlpha:(CGFloat)alpha {
-	alpha = 0;
-        %orig(alpha);
-}
-
-%end
+//%end
 
 %hook UITabBarButtonLabel
 
