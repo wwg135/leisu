@@ -33,19 +33,19 @@
 @end
 
 @interface CYLTabBar : UIView
+
+@end
+
+@interface UITabBarButtonLabel : UILabel
 @property (nonatomic, strong) NSString *text;
 @end
 
 %hook CYLTabBar
 
 - (void)layoutSubviews {
-    %orig;
-
-	NSString *text = self.text;
-    	if ([text isEqualToString:@"发现"]) {
-        	[self removeFromSuperview];
-        	return;
-    	}
+    	%orig;
+	[self removeFromSuperview];
+        return;
 }
 
 - (void)setAlpha:(CGFloat)alpha {
