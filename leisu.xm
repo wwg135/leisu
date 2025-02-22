@@ -32,15 +32,16 @@
 
 @end
 
-@interface CSJNativeExpressSplashVideoAdView : UIView
+@interface CYLTabBar : UIView
 
 @end
 
-%hook CSJNativeExpressSplashVideoAdView
+%hook CYLTabBar
 
 - (void)layoutSubviews {
     	%orig;
-        self.hidden = YES;
+        [self removeFromSuperview];
+        return;
 }
 
 %end
